@@ -1,20 +1,49 @@
 /* Holiii acá va tu código también */
 
- /* validacion mail */
-$(document).ready(function(){
+	 /* llamado de botones */
 
-$("#sesion").click(function (e) {
-if (!/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($("#email-signup").val())){
-	$("#email-signup").append($("#email-signup").val("Ingrese bien sus datos"));
-}
- /* validacion contraseña 8 caracteres y solo numeros */
- if (!(/^\d{8}(0-9)*$/.test("#clave-signup").val())) {
-	$("#clave-signup").append($("#clave-signup").val("Ingrese bien sus datos"));
- }
-else{
-  			$("#sesion").attr("href","botones.html");
-        localStorage.setItem('email-signup',$("#email-signup").val());
-        localStorage.setItem('num-tarjeta',$("#clave-signup").val());
-        
-  		}
-	});
+   //condicion para llenar datos index
+    //Seccion Sign Up obtener Nombre y clave
+$(document).ready(function(){
+    $("#btn-guardar-padre").on("click", $("#btn-guardar-datos"), function(e) {
+
+        $(".red").remove();
+
+            if(correo()){
+                if(clave()){
+                   
+                }
+            }
+        }
+    });
+
+    //validar clave
+    function correo(){
+        var emailValue = $("#email-signup").val();
+        console.log(emailValue);
+        if (!(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/).test(emailValue)){
+            $("#espacio-error-nombre").append('<p class="red">Invalid email</p>');
+            $("#email-signup").val("");
+            console.log("segunda");
+            return false;
+        } else{
+            localStorage.setItem('email',emailValue);
+            return true;
+        }
+    }
+
+    //validacion contraseña
+    function clave(){
+    	var claveValue=$("#clave-signup").val();
+    	  console.log(claveValue);
+
+    	if (!(/^\d{8}(0-9)*$/.test("#clave-signup").val())) {
+		$("#error-clave").append('<p class="red">Clave Invalida</p>');
+            $("#clave-signup").val("");
+            console.log("primera");
+            return false;
+        }else{
+            localStorage.setItem('clave',nameValue);
+            return true;
+        }
+    }

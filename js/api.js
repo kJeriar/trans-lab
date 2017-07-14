@@ -9,14 +9,14 @@ $(document).ready(function(){
 		datatype:"JSON",
 
 	})
-	/*si se encuentra info */
-	.done(function(resp){
-		console.log("se muestra algo");
-		console.log(resp);
-	})
-	/*error */
-	.fail(function(){
-		console.log("no no no")
-	});
+.done(function){
+	console.log("success");
 })
-		
+.fail(function){
+	console.log("error");
+})
+	
+.always(function){
+	console.log("complete");
+});
+});	
