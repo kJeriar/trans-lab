@@ -4,18 +4,7 @@
 
    //condicion para llenar datos index
     //Seccion Sign Up obtener Nombre y clave
-$(document).ready(function(){
-    $("#btn-guardar-padre").on("click", $("#btn-guardar-datos"), function(e) {
 
-        $(".red").remove();
-
-            if(correo()){
-                if(clave()){
-                   
-                }
-            }
-        }
-    });
 
     //validar clave
     function correo(){
@@ -47,3 +36,5 @@ $(document).ready(function(){
             return true;
         }
     }
+
+    //calcular tarifa
