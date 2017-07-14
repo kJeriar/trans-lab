@@ -1,7 +1,5 @@
 /* Holiii acá va tu código también */
 
-	 /* llamado de botones */
-
    //condicion para llenar datos index
     //Seccion Sign Up obtener Nombre y clave
 
@@ -11,9 +9,9 @@
         var emailValue = $("#email-signup").val();
         console.log(emailValue);
         if (!(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/).test(emailValue)){
-            $("#espacio-error-nombre").append('<p class="red">Invalid email</p>');
+            $("#espacio-error-mail").append('<p class="red">Invalid email</p>');
             $("#email-signup").val("");
-            console.log("segunda");
+            console.log("---");
             return false;
         } else{
             localStorage.setItem('email',emailValue);
@@ -29,10 +27,10 @@
     	if (!(/^\d{8}(0-9)*$/.test("#clave-signup").val())) {
 		$("#error-clave").append('<p class="red">Clave Invalida</p>');
             $("#clave-signup").val("");
-            console.log("primera");
+            console.log("---");
             return false;
         }else{
-            localStorage.setItem('clave',nameValue);
+            localStorage.setItem('clave',claveValue);
             return true;
         }
     }
