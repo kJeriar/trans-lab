@@ -1,1 +1,31 @@
 /* YeyeYeee código aquí */
+
+/*------ index ------*/ 
+body{
+	background-color: #303032;
+}
+
+.logo{
+	margin-top: 25%;
+}
+
+.btn{
+	width: 100%;
+	background-color: #F29809;
+}
+
+.color01{
+  color: #f6a800;
+}
+
+.olvidate, .no{
+  color: white;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]){
+	border-bottom: 1px solid #F29809;
+    box-shadow: 0 1px 0 0 #F29809;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly])+label{
+	color: #F29809;
+}
